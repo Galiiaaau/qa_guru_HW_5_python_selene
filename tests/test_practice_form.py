@@ -1,5 +1,7 @@
 from selene import browser, have, be, by
 import os
+
+
 def test_fill_out_the_form():
 
     browser.open("/automation-practice-form")
@@ -21,11 +23,10 @@ def test_fill_out_the_form():
     browser.element("#react-select-4-input").should(be.blank).type("Delhi").press_enter()
     browser.element("#submit").double_click()
 
-
-    #Check if the form was submitted
+    # Check if the form was submitted
     browser.element("#example-modal-sizes-title-lg").should(have.text("Thanks for submitting the form"))
 
-    #Check if the results are correct
+    # Check if the results are correct
     browser.element('.table').should(have.text("Galiia Uzbekova"))
     browser.element('.table').should(have.text("galiiauzbekova@gmail.com"))
     browser.element('.table').should(have.text("Female"))
@@ -36,14 +37,3 @@ def test_fill_out_the_form():
     browser.element('.table').should(have.text("this-is-fine.png"))
     browser.element('.table').should(have.text("Moscow"))
     browser.element('.table').should(have.text("NCR Delhi"))
-
-
-
-
-
-
-
-
-
-
-
